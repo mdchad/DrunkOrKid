@@ -1,0 +1,35 @@
+body {
+  text-align: center;
+  font-family: sans-serif;
+  color: grey;
+}
+
+h1 {
+  color: black;
+}
+
+p {
+  font-weight: 200;
+  margin: 50px 0;
+}
+
+button {
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover{
+  background-color: black;
+  color: white;
+}
+
+.answer{
+  background-color: #eee;
+  padding: 10px;
+}
+
+.title{
+  text-decoration: underline
+}
