@@ -8,7 +8,7 @@ class App extends React.Component {
                     answer: [],
                     isHidden: true
                   }
-    // this.show = this.show.bind(this)
+    this.show = this.show.bind(this)
   }
 
   componentWillMount(){
