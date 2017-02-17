@@ -1,0 +1,57 @@
+.wrap{
+    margin-left: 45vw;
+    height: 1000px;
+    width: 1000px;
+    font-family: sans-serif;
+    position: relative;
+}
+
+
+.box{
+    display: inline-block;
+    width: 130px;
+    height: 130px;
+    /*   margin-top: 60px; */
+    /*   margin-left: 70px;  */
+    cursor: pointer;
+    color:white;
+    text-align: center;
+    border-radius: 50%;
+    background-image: url('http://allappapk.com/wp-content/uploads/2016/06/Reddit-Logo.png');
+    background-size: contain;
+    position: absolute;
+    z-index: 1;
+    left: 0px;
+    top: 60px;
+}
+
+
+
+.anim{
+    content: "";
+    width: 130px;
+    height: 130px;
+    position: absolute;
+    border-radius: 50%;
+    background: #FF4500;
+    left: 0px;
+    top: 60px;
+    transform: scale(1);
+    animation: fade 1500ms ease forwards infinite;
+    z-index: 0;
+}
+
+@keyframes fade{
+    0%{
+        opacity: 0;
+    }
+
+    50%{
+        opacity: 0.6;
+    }
+
+    100%{
+        opacity: 0;
+        transform: scale(1.5)
+    }
+}

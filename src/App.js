@@ -1,14 +1,13 @@
 import React from 'react';
 import './index.css'
+import Wrap from './Wrap'
 
 class App extends React.Component {
   constructor(){
     super()
     this.state = {
                     answer: [],
-                    isHidden: true
                   }
-    this.show = this.show.bind(this)
   }
 
   componentWillMount(){
@@ -20,28 +19,12 @@ class App extends React.Component {
       })
   }
 
-  toggleHidden(){
-    this.setState(this.state.isHidden ? false : true)
-  }
 
   render(){
-      return <div>
-               <h1>Drunk or Kid</h1>
-               {this.state.answer.map(answer =>
-                <div className="title" key={answer.id}><p>{answer.title}</p>
-                  <button onClick={this.toggleHidden}>Answer</button>
-                  {!this.state.isHidden && <Show>{answer.selftext}</Show>}
-                </div>
-
-               )}
-           </div>
+    return (
+      <Wrap answer={this.state.answer} />
+    )
   }
 }
-
-
-const Show = (props) => <p className="answer">{props.children}</p>
-
-
-
 
 export default App;
