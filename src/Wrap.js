@@ -14,8 +14,8 @@ class Wrap extends React.Component {
       <div>
         <h1>Drunk or Kid</h1>
         {
-          answer.map(answer =>
-            <Question answer={answer} key={answer.id} />
+          answer.map(({answer: id}) =>
+            <Question answer={answer} key={id} />
           )
         }
       </div>

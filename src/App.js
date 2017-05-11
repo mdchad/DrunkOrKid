@@ -13,12 +13,11 @@ class App extends React.Component {
   componentWillMount(){
     fetch('http://www.reddit.com/r/DrunkOrAKid/hot.json?sort=hot')
       .then(res => res.json())
-      .then( (data) => {
-        const answer = data.data.children.map(obj => obj.data);
+      .then(data => {
+        const answer = data.data.children.map(({data}) => data);
         this.setState({answer});
       })
   }
-
 
   render(){
     return (

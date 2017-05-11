@@ -7,26 +7,25 @@ export default class Question extends React.Component {
     this.state = {
       isHidden: false
     }
-    this.toggleHidden = this.toggleHidden.bind(this)
   }
   // Toggle the visibility
-  toggleHidden() {
+  toggleHidden = () => {
     this.setState({
       isHidden: !this.state.isHidden
     });
   }
   // Render the component
   render() {
-    const { answer } = this.props;
+    const { answer: {id, title, selftext} } = this.props;
     return (
-      <div key={answer.id}>
-        <p className="title">{answer.title}</p>
+      <div key={id}>
+        <p className="title">{title}</p>
         <button onClick={this.toggleHidden}>Answer</button>
-        {this.state.isHidden && <Show>{answer.selftext}</Show>}
+        {this.state.isHidden && <Show>{selftext}</Show>}
       </div>
     );
   }
 }
 
-const Show = (props) => <p className="answer">{props.children}</p>
+const Show = ({children}) => <p className="answer">{children}</p>
 
