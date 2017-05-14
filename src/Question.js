@@ -17,7 +17,7 @@ export default class Question extends Component {
   // Render the component
   render() {
     const { answer: {id, title, selftext} } = this.props;
-    const { isHidden } = this.state
+    const { isHidden } = this.state;
     return (
       <div key={id}>
         <p className="title">{title}</p>

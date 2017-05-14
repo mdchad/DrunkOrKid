@@ -16,7 +16,12 @@ const LoadingHOC = (propName) => (WrappedComponent) => {
     render() {
       return this.isEmpty(this.props[propName])
         // Will trigger if prop is empty or null
-        ? <div className="wrap"><div className="anim"></div><div className="box"></div></div>
+        ? (
+            <div className="wrap">
+              <div className="anim"></div>
+              <div className="box"></div>
+            </div>
+          )
         : <WrappedComponent {...this.props} />;
     }
   }
