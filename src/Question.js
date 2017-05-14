@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-export default class Question extends React.Component {
+export default class Question extends Component {
   // Set initial state of isHidden to false
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       isHidden: false
     }
@@ -17,11 +17,12 @@ export default class Question extends React.Component {
   // Render the component
   render() {
     const { answer: {id, title, selftext} } = this.props;
+    const { isHidden } = this.state
     return (
       <div key={id}>
         <p className="title">{title}</p>
         <button onClick={this.toggleHidden}>Answer</button>
-        {this.state.isHidden && <Show>{selftext}</Show>}
+        {isHidden && <Show>{selftext}</Show>}
       </div>
     );
   }

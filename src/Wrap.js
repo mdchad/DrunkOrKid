@@ -3,24 +3,18 @@ import Question from './Question';
 import LoadingHOC from './HOC/LoadingHOC';
 
 
-class Wrap extends React.Component {
-  constructor(){
-    super()
-  }
-
-  render(){
-    const answer = this.props.answer.slice(2)
-    return (
-      <div>
-        <h1>Drunk or Kid</h1>
-        {
-          answer.map(({answer: id}) =>
-            <Question answer={answer} key={id} />
-          )
-        }
-      </div>
-    )
-  }
+const Wrap = ({answer}) => {
+  const question = answer.slice(2)
+  return (
+    <div>
+      <h1>Drunk or Kid</h1>
+      {
+        question.map(answer =>
+          <Question answer={answer} key={answer.id}/>
+        )
+      }
+    </div>
+  )
 }
 
 export default LoadingHOC('answer')(Wrap);

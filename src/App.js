@@ -1,27 +1,32 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './index.css'
 import Wrap from './Wrap'
 
-class App extends React.Component {
-  constructor(){
+class App extends Component {
+  constructor() {
     super()
-    this.state = {
-                    answer: [],
-                  }
+    this.state =
+      {
+        answer: [],
+      }
   }
 
   componentWillMount(){
-    fetch('http://www.reddit.com/r/DrunkOrAKid/hot.json?sort=hot')
+    const url = 'http://www.reddit.com/r/DrunkOrAKid/hot.json?sort=hot'
+
+    fetch(url)
       .then(res => res.json())
-      .then(data => {
-        const answer = data.data.children.map(({data}) => data);
+      .then(({data: {children}}) => {
+        const answer = children.map(({data}) => data);
+        // Assigning answer state to const answer, => answer: [answer]
         this.setState({answer});
       })
   }
 
-  render(){
+  render() {
+    const { answer } = this.state
     return (
-      <Wrap answer={this.state.answer} />
+      <Wrap answer={answer} />
     )
   }
 }

@@ -3,6 +3,7 @@ import './LoadingHOC.css';
 
 
 const LoadingHOC = (propName) => (WrappedComponent) => {
+  // Check if prop is null or empty
   return class LoadingHOC extends Component {
     isEmpty = (prop) => {
       return (
@@ -14,6 +15,7 @@ const LoadingHOC = (propName) => (WrappedComponent) => {
     }
     render() {
       return this.isEmpty(this.props[propName])
+        // Will trigger if prop is empty or null
         ? <div className="wrap"><div className="anim"></div><div className="box"></div></div>
         : <WrappedComponent {...this.props} />;
     }
