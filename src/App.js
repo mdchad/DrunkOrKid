@@ -4,7 +4,7 @@ import Wrap from './Wrap'
 
 class App extends Component {
   constructor() {
-    super()
+    super();
     this.state =
       {
         answer: [],
@@ -12,7 +12,7 @@ class App extends Component {
   }
 
   componentWillMount(){
-    const url = 'http://www.reddit.com/r/DrunkOrAKid/hot.json?sort=hot'
+    const url = 'http://www.reddit.com/r/DrunkOrAKid/hot.json?sort=hot';
 
     fetch(url)
       .then(res => res.json())
@@ -24,7 +24,7 @@ class App extends Component {
   }
 
   render() {
-    const { answer } = this.state
+    const { answer } = this.state;
     return (
       <Wrap answer={answer} />
     )
