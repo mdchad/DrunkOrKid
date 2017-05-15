@@ -24,9 +24,8 @@ class App extends Component {
   }
 
   render() {
-    const { answer } = this.state;
     return (
-      <Wrap answer={answer} />
+      <Wrap {...this.state} />
     )
   }
 }
